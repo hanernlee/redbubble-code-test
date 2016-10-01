@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+LIB_DIR = File.expand_path(File.join(File.dirname(__FILE__), '../lib'))
+$LOAD_PATH.unshift(LIB_DIR)
+
+require 'nokogiri'
+require 'open-uri'
+require 'byebug'
+require 'fileutils'
+require 'erb'
+require 'redbubble'
+
+xml_input = ARGV[0]
+xml_output = ARGV[1]
+
+doc = Nokogiri::XML(open(xml_input))
+processed_work = BatchProcessor.run(doc,xml_output)
