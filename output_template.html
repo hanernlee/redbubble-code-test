@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RedBubble</title>
+  <style type="text/css">
+    nav {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><%= title %></h1>
+
+    <nav>
+      <% unless @index %>
+        <a href="index.html">Index</a>
+      <% end %>
+      <% if @items.kind_of?(Array)%>
+        <% @items.each do |item| %>
+          <a href="<%= item.name.downcase.gsub(' ','_') %>.html"><%= item.name %></a>
+        <% end %>
+      <% else %>
+        <a href="<%= @items.downcase.gsub(' ','_')%>.html"><%= @items %></a>
+      <%end%>
+    </nav>
+  </header>
+
+  <div>
+    <% @images.each do |image| %>
+      <img src="<%= image %>">
+    <% end %>
+  </div>
+
+</body>
+</html>

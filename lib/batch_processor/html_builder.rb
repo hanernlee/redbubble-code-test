@@ -1,6 +1,6 @@
 require 'batch_processor/template_factory'
 
-module Redbubble
+module BatchProcessor
   class HTMLBuilder
 
     def self.build(data,directory)

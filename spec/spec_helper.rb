@@ -1,7 +1,1 @@
-RSpec.configure do |config|
-
-  config.tty = true
-
-  #Use the specified formatter
-  config.formatter = :documentation
-end
+Dir[File.join(File.dirname(__FILE__), '../lib/**/*.rb')].each { |f| require f}

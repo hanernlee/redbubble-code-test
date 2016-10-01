@@ -7,7 +7,7 @@ require 'open-uri'
 require 'byebug'
 require 'fileutils'
 require 'erb'
-require 'redbubble'
+require 'batch_processor'
 
 xml_input = ARGV[0]
 xml_output = ARGV[1]
