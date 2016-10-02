@@ -10,7 +10,7 @@ describe BatchProcessor::WorkData do
     camera_make.add_model(camera_model)
   end
 
-  describe '.add_camera_make' do
+  describe '#add_camera_make' do
     it { expect(work.add_camera_make(camera_make)).to include(camera_make) }
 
     it 'doesnt add duplciate camera makes' do
@@ -19,7 +19,7 @@ describe BatchProcessor::WorkData do
     end
   end
 
-  describe '.models' do
+  describe '#models' do
     before { work.add_camera_make(camera_make) }
 
     it 'returns all camera models' do
@@ -27,11 +27,19 @@ describe BatchProcessor::WorkData do
     end
   end
 
-  describe '.images' do
+  describe '#images' do
     before { work.add_camera_make(camera_make) }
 
     it 'returns all images' do
       expect(work.images).to match_array(['1.jpg'])
+    end
+  end
+
+  describe '#add_index_page_images' do
+    before { work.add_index_page_images("1.jpg") }
+
+    it 'returns images for index_page' do
+      expect(work.index_page_images).to match_array(['1.jpg'])
     end
   end
 end

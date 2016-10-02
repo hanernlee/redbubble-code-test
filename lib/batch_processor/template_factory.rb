@@ -3,7 +3,6 @@ require 'erb'
 module BatchProcessor
   class TemplateFactory
     include ERB::Util
-    attr_accessor :title, :items
 
     def initialize(title,item,image,index)
       @title = title
