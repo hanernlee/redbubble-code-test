@@ -46,7 +46,7 @@ Run `bundle install`
 Before running the application, please make sure you have the correct permissions to write to the folder.
 
 Run the application with the following command
-'bin/batch_processor <API URL> <Output Directory>'
+`bin/batch_processor <API URL> <Output Directory>`
 For example `bin/batch_processor "http://take-home-test.herokuapp.com/api/v1/works.xml" "output"`
 * The API URL must contain valid XML data
 * The output directory doesn't have to exist before running the application
@@ -64,17 +64,17 @@ Before developing the application, I drew a class diagram to figure out what Cla
 
 Here is a quick summary of my thought process:
 
-1. Parsing the XML data
+#### Parsing the XML data
 * I haven't had much experience with Nokogiri but found it to be the simplest way to extract XML data  
 * Nokogiri also allows flexibility to read XML data from either a URL or XML file
 
-2. Processing data into Work Data, Camera Make , Camera Model
+#### Processing data into Work Data, Camera Make , Camera Model
 * When looping through the works data, I found it easiest to create Work Data, Camera Make and Camera Model for each work within the loop.
 * Work Data will store Camera Make and Camera Make will then store Camera Model
 * To account for work data that had an image but no make or model, I decided to create an Unknown and Unknown Model tag to still allow access for those images
 
 
-3. Creating HTML pages based on a template
+#### Creating HTML pages based on a template
 * I found using ERB templates to be a much more easier approach as I would be able to use the given HTML template and add inline Ruby code to generate the data
 * It was my first time using ERB outside of the Rails environment and thus relied on http://www.stuartellis.eu/articles/erb/
 
@@ -82,13 +82,13 @@ Here is a quick summary of my thought process:
 
 The areas where I wanted to have some error handling were:
 
-1. No input arguments given
+1. When no input arguments given
   - No API URL
   - No Output Directory
 
-2. Empty XML file or a different file type
+2. When there is an empty XML file or a different file type
 
-3. Data with no make and no Model
+3. When there is XML data with no make and no Model
 
 ## Testing
 
