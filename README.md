@@ -53,7 +53,7 @@ For example `bin/batch_processor "http://take-home-test.herokuapp.com/api/v1/wor
 * The output directory doesn't have to exist before running the application
 * If the output directory already exits, it must be inside this root directory
 
-If the application is run twice, please note that the existing files will be overwritten.
+If the application is run twice, please note that the existing directory and files with the same name will be overwritten.
 
 ## Running the tests
 
