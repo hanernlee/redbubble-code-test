@@ -9,6 +9,12 @@ require 'fileutils'
 require 'erb'
 require 'batch_processor'
 
+unless ARGV.length == 2
+  raise(ArgumentError, "Incorrect number of arguments")
+  puts "Usage: bin/batch_processor <API URL> <Output Directory>"
+  exit
+end
+
 xml_input = ARGV[0]
 xml_output = ARGV[1]
 
