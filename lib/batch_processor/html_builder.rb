@@ -1,6 +1,6 @@
 require 'batch_processor/html_page'
 
-module Redbubble
+module BatchProcessor
   class HTMLBuilder
     def self.build(data,directory)
       unless File.directory?(directory)

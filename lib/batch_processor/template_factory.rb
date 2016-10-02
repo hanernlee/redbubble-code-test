@@ -4,11 +4,11 @@ module BatchProcessor
   class TemplateFactory
     include ERB::Util
 
-    def initialize(title,item,image,index)
-      @title = title
-      @items = item
-      @images = image
-      @index = index
+    def initialize(options)
+      @title = options[:title]
+      @items = options[:item]
+      @images = options[:images]
+      @index = options[:index] || false
     end
 
     def save(file)
