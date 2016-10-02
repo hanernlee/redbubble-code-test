@@ -53,7 +53,9 @@ For example `bin/batch_processor "http://take-home-test.herokuapp.com/api/v1/wor
 * The output directory doesn't have to exist before running the application
 * If the output directory already exits, it must be inside this root directory
 
-If the application is run twice, please note that the existing directory and files with the same name will be overwritten.
+Once you receive the "Operations Successfully Completed" message in terminal, you should be able to navigate to the created Output Directory and open `index.html` to navigate through the images for each camera make and model.
+
+If the application is run twice, please note that the any directory and files with the same name will be overwritten.
 
 ## Running the tests
 
