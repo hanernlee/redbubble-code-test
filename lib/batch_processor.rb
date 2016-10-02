@@ -9,8 +9,9 @@ module BatchProcessor
 
     work = WorkData.new
 
-    data.xpath('//work').each do |node|
+    puts "Reading XML data..."
 
+    data.xpath('//work').each do |node|
       image = xml_image(node).content.strip
       xml_make(node).nil? ? make = "Unknown" : make = xml_make(node).content
       xml_model(node).nil? ? model = "Unknown Model" : model = xml_model(node).content
@@ -26,6 +27,7 @@ module BatchProcessor
     end
 
     HTMLBuilder.build(work,directory)
+    puts "Operation Successfully Completed!"
   end
 
   def self.xml_image(node)
