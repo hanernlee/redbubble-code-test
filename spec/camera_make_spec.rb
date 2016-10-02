@@ -2,11 +2,9 @@ require 'spec_helper'
 
 describe BatchProcessor::CameraMake do
   let(:camera_make) { described_class.new(name: "NIKON") }
-
-  # use instance double
   let(:camera_model_one) { BatchProcessor::CameraModel.new(name: "NIKON D80", make: "NIKON") }
 
-  describe '.add_model' do
+  describe '#add_model' do
     before { camera_make.add_model(camera_model_one) }
 
     it { expect(camera_make.models).to include(camera_model_one) }
@@ -17,7 +15,7 @@ describe BatchProcessor::CameraMake do
     end
   end
 
-  describe '.images' do
+  describe '#images' do
     let(:camera_model_two) { BatchProcessor::CameraModel.new( name: "NIKON D80", make: "NIKON") }
 
     before do

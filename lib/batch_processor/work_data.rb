@@ -1,9 +1,10 @@
 module BatchProcessor
   class WorkData
-    attr_reader :camera_makes, :images
+    attr_reader :camera_makes, :images, :index_page_images
 
     def initialize
       @camera_makes = []
+      @index_page_images = []
     end
 
     def add_camera_make(camera_make)
@@ -21,6 +22,10 @@ module BatchProcessor
 
     def images
       @camera_makes.map(&:images).flatten
+    end
+
+    def add_index_page_images(image)
+      @index_page_images << image
     end
   end
 end

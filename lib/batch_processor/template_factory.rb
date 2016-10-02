@@ -8,7 +8,7 @@ module BatchProcessor
     def initialize(title,item,image,index)
       @title = title
       @items = item
-      @images = image.take(10)
+      @images = image
       @index = index
     end
 

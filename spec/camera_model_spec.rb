@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe BatchProcessor::CameraModel do
-  let(:camera_model) { BatchProcessor::CameraModel.new({ :name => "NIKON D80", :make => "NIKON" })}
+  let(:camera_model) { BatchProcessor::CameraModel.new({ name: "NIKON D80", make: "NIKON" })}
 
-  describe '.add_image' do
+  describe '#add_image' do
     before { camera_model.add_image("1.jpg") }
 
     it 'adds camera images' do

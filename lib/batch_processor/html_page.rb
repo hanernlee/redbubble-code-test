@@ -1,9 +1,9 @@
-require 'redbubble/template_factory'
+require 'batch_processor/template_factory'
 
 module BatchProcessor
   class HTMLPage
     def self.index(data,directory)
-      options = {title: "RedBubble Code Challenge", item: data.camera_makes, images: data.index_page_images.take(10), index: true }
+      options = {title: "RedBubble's Coding Test", item: data.camera_makes, images: data.index_page_images.take(10), index: true }
       index = TemplateFactory.new(options)
       index.save(directory + "/index.html")
     end
