@@ -47,6 +47,7 @@ Before running the application, please make sure you have the correct permission
 
 Run the application with the following command
 `bin/batch_processor <API URL> <Output Directory>`
+
 For example `bin/batch_processor "http://take-home-test.herokuapp.com/api/v1/works.xml" "output"`
 * The API URL must contain valid XML data
 * The output directory doesn't have to exist before running the application
